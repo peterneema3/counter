@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neema Peter | Student ID: 77366</title>
+</head>
+<body>
+
+    <h1>Counter</h1>
+
+    <div id="boxCounter">0</div>
+    <div id="container-button">
+   
+        <button id="IncrementButton">Increment</button>
+        <button id="DecrementButton">Decrement</button>
+        <button id="ResetButton">Reset</button>
+    </div>
+    
+    <script>
+        const boxCounter = document.getElementById('boxCounter');
+        const btncontainer = document.getElementById('container-button');
+        btncontainer.addEventListener('click', (event) => {
+            if (event.target.id === 'IncrementButton') {
+                boxCounter.innerText = parseInt(boxCounter.innerText) + 1;
+            } else if (event.target.id === 'DecrementButton') {
+                boxCounter.innerText = parseInt(boxCounter.innerText) - 1;
+            } else if (event.target.id === 'ResetButton') {
+                boxCounter.innerText = 0;
+            }
+            if (parseInt(boxCounter.innerText) < 0) {
+                boxCounter.style.color = '#FF0000';
+            } else if (parseInt(boxCounter.innerText) > 0) {
+                boxCounter.style.color = '#0000FF';
+            } else {
+                boxCounter.style.color = ' #000000';
+            }
+        });
+
+    </script>
+</body>
+</html>
